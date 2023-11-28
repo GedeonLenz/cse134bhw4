@@ -21,7 +21,7 @@
                 <output for="name" id="name-information" class="information">Information</output>
                 <label for="email">E-Mail:</label>
                 <input type="email" id="email" name="email" minlength="6" maxlength="40" placeholder="Email" required>
-                <output for="email"id="email-error" class="error">Error</output>
+                <output for="email" id="email-error" class="error">Error</output>
                 <output for="email" id="email-information" class="information">Information</output>
                 <label for="comments">Comments:</label>
                 <textarea name="comments" id="comments" minlength="20" maxlength="500" placeholder="Comments..." required></textarea>
@@ -55,7 +55,7 @@
 
                 //Input validation / errors
                 function validateInput(event, label) {
-                    let msg = "";
+                    let msg;
                     let regex = /^[A-Za-z -]*$/;
                     let regexnegate = /[^A-Za-z -]/g;
                     let timeBased = false;

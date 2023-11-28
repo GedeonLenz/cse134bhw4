@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #ffb700;
+    --background-color: #ffffff;
+    --border-color: #cccccc;
+    --label-color: #a8a8a8;
+    --text-color: #3b3b3b;
+    --output-color: #ffffff;
+    --output-error-bgcolor: rgba(255, 0, 0, 0.7);
+    --output-info-bgcolor: rgba(0, 0, 255, 0.7);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+}
+
+h1 {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-size: 30px;
+    color: var(--text-color);
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    column-gap: 10px;
+    position: relative;
+    max-width: 500px;
+    width: 30%;
+    min-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    background: var(--background-color);
+    padding: 10px;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+input, textarea, button {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+button {
+background: var(--primary-color);
+    color: var(--output-color);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--label-color);
+}
+
+.error, .information {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: var(--output-color);
+    background: var(--output-info-bgcolor);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    line-height: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.error {
+    background: var(--output-error-bgcolor);
+}
+
+input:user-invalid > .error, textarea:user-invalid > .error {
+    display: block;
+}
+
+.fadeout {
+    display: block;
+    animation: fadeout 0.3s linear;
+}
+
+@keyframes fadeout {
+    0%   {opacity: 1.0;}
+    100% {opacity: 0;}
+}
+
+input, textarea {
+    box-sizing: border-box;
+}
+
+input:user-invalid, textarea:user-invalid {
+    border: 2px solid red !important;
+}
+
+.flash {
+    animation: flash 0.5s linear;
+}
+
+@keyframes flash {
+    0%   {border: 2px solid red;}
+    25%  {border: none;}
+    50%  {border: 2px solid red;}
+    100% {border: none;}
+}
+
+#switch {
+    display: none;
+    position: relative;
+    width: 30px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    background: none;
+    left:50%;
+    transform: translateX(-50%);
+}
